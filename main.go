@@ -46,7 +46,7 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			if m.command == 1 {
 				value := m.translatedTag.Value()
 				if len(value) != 0 {
-
+					_ = translate.UpdateTag(m.translateTag.Name, value)
 				}
 				tag := translate.GetTag()
 				m.translateTag = tag
