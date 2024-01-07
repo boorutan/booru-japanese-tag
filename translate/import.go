@@ -16,7 +16,7 @@ type Tag struct {
 }
 
 func GetTag() Tag {
-	rows, _ := db.DB.Query("SELECT id, name, post_count, alias FROM tag WHERE translated = false ORDER BY post_count DESC LIMIT 5")
+	rows, _ := db.DB.Query("SELECT id, name, post_count, alias FROM tag WHERE translated = false AND category = 0 OR category = 4 ORDER BY post_count DESC LIMIT 5")
 	var tags []Tag
 	for rows.Next() {
 		tag := Tag{}
