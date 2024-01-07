@@ -9,6 +9,7 @@ import (
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"
 	"github.com/muesli/termenv"
+	"strconv"
 )
 
 type item struct {
@@ -92,11 +93,14 @@ func (m model) View() string {
 	}
 	var color = termenv.EnvColorProfile().Color
 	var keyword = termenv.Style{}.Foreground(color("204")).Background(color("235")).Bold().Underline().Styled
-	var underline = termenv.Style{}.Bold().Styled
+	var bold = termenv.Style{}.Bold().Styled
+	var underline = termenv.Style{}.Bold().Underline().Styled
 	return fmt.Sprintf(
-		"\n\n %s > %s\n\n",
+		"\n\n %s > %s\n\nCount: %s\nAlias: %s\n",
 		keyword(m.translateTag.Name),
-		underline(m.translatedTag.View()[2:]),
+		bold(m.translatedTag.View()[2:]),
+		underline(strconv.Itoa(m.translateTag.PostCount)),
+		bold(m.translateTag.Alias),
 	)
 }
 
