@@ -108,7 +108,7 @@ func main() {
 	db.InitDB()
 
 	items := []list.Item{
-		item{title: "単語を登録する", desc: "Dannboruのタグを日本語翻訳します"},
+		item{title: "単語を翻訳する", desc: "Dannboruのタグを日本語翻訳します"},
 		item{title: "単語をエクスポートする", desc: "今までした翻訳をエクスポートします"},
 		item{title: "単語をインポートする", desc: "翻訳する単語をインポートします"},
 	}
