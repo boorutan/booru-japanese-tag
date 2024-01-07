@@ -1,5 +1,5 @@
 # About
-[Danbooru](https://danbooru.donmai.us/)のタグを日本語するためのリポジトリです
+[Danbooru](https://danbooru.donmai.us/)のタグを日本語化するためのリポジトリです
 
 全てを日本語化することは無理なのでよく使われるタグの数百個を目安にやっていきます
 
