@@ -100,7 +100,7 @@ soloと同じ?
 ミニスカ
 ## sailor_collar,セイラーカラー
 セイラー服のえり
-## legwere,黒い脚ウェア
+## black_legwear,黒靴下
 分かりませんでした
 ## grey_background,灰色背景
 謎は深まるばかり
@@ -170,3 +170,33 @@ blue_eyesと同じになってしまった
 ## official_alternate_costume,公式の別のコスチューム
 ## v-shaped_eyebrows,V字眉
 ## wet,濡れ
+## head_tilt,斜め顔
+## streaked_hair,メッシュ
+https://dic.pixiv.net/a/%E3%83%A1%E3%83%83%E3%82%B7%E3%83%A5
+## white_legwear,白靴下
+## neckerchief,スカーフ
+ネッカチーフの方がいいかもしれない
+ただneckerchiefとdanbooruで調べるとほとんどはセーラー服なんだよなー
+## crop_top,クロップドトップス
+服上下別の方がいいかな
+## shiny_skin,光ってる肌
+## animal_ear_fluff,獣耳の毛
+絶対もっといいのある
+## see-through,透け
+## looking_to_the_side,よそ見
+よそ見は違う?
+## wrist_cuffs,手首の袖
+hmm,絶対違うがカフスと訳すのもなー
+## sleeves_past_wrists,袖余り
+## torn_clothes,服ビリ
+## grey_eyes,灰目
+## sash,帯
+## parted_bangs,センター分け
+## maid_headdress,メイドの髪飾り
+カチューシャにすべきか?
+## black_pantyhose,黒パンスト
+## fur_trim,毛皮
+## one-piece_swimsuit,一部位の水着
+## ascot,アスコットタイ
+## fox_ears,狐耳
+表記揺れ

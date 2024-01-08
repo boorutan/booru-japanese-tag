@@ -163,7 +163,7 @@ func main() {
 		item{title: "単語を翻訳する", desc: "Dannboruのタグを日本語翻訳します"},
 		item{title: "特定の単語を翻訳する", desc: "特定のDannboruのタグを日本語翻訳します"},
 		item{title: "単語をエクスポートする", desc: "今までした翻訳をエクスポートします"},
-		item{title: "単語をインポートする", desc: "翻訳する単語をインポートします"},
+		item{title: "単語をインポートする", desc: "翻訳する単語をインポートします、環境によっては1分以上かかります"},
 	}
 
 	m := model{
