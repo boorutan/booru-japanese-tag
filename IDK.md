@@ -200,3 +200,11 @@ hmm,絶対違うがカフスと訳すのもなー
 ## ascot,アスコットタイ
 ## fox_ears,狐耳
 表記揺れ
+## pussy_juice,愛液
+## skirt_lift,スカートのたくしあげ
+## dog_girl,犬娘
+## 3boys,三人の男の子
+## sound_effects,オノマトペ
+効果音の方がいい?
+## bottomless,ボトムレス
+トップレスの反対だからボトムレスは安易すぎる?
