@@ -13,6 +13,7 @@ type Tag struct {
 	Alias          string
 	Id             int
 	TranslatedName string
+	Translated     bool
 }
 
 func GetTag() Tag {
@@ -27,9 +28,13 @@ func GetTag() Tag {
 }
 
 func (t Tag) GetTag() (Tag, error) {
-	row := db.DB.QueryRow("SELECT id, name, post_count, alias FROM tag WHERE name = ?", t.Name)
+	row := db.DB.QueryRow("SELECT id, name, post_count, alias, translated FROM tag WHERE name = ?", t.Name)
 	var tag Tag
-	err := row.Scan(&tag.Id, &tag.Name, &tag.PostCount, &tag.Alias)
+	err := row.Scan(&tag.Id, &tag.Name, &tag.PostCount, &tag.Alias, &tag.Translated)
+	if tag.Translated {
+		row := db.DB.QueryRow("SELECT translated_name FROM tag WHERE name = ?", t.Name)
+		_ = row.Scan(&tag.TranslatedName)
+	}
 	if err != nil {
 		return tag, err
 	}

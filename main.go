@@ -147,12 +147,19 @@ func (m model) View() string {
 			bold(m.translateTag.Alias),
 		)
 	}
+	var translated = (func() string {
+		if len(m.translateTag.TranslatedName) != 0 {
+			return fmt.Sprintf("Translate: %s\n", keyword(m.translateTag.TranslatedName))
+		}
+		return ""
+	})()
 	return fmt.Sprintf(
-		"\n\n %s > %s\n\nCount: %s\nAlias: %s\n",
+		"\n\n %s > %s\n\nCount: %s\nAlias: %s\n%s",
 		keyword(m.searchTag.View()[2:]),
 		bold(m.translatedTag.View()[2:]),
 		underline(strconv.Itoa(m.translateTag.PostCount)),
 		bold(m.translateTag.Alias),
+		translated,
 	)
 }
 
