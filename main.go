@@ -25,6 +25,8 @@ type model struct {
 	command       int
 	translateTag  translate.Tag
 	translatedTag textinput.Model
+	isSearchTag   bool
+	searchTag     textinput.Model
 }
 
 func (m model) Init() tea.Cmd {
@@ -40,9 +42,17 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		if msg.String() == "enter" {
 			if m.command == 0 {
 				m.command = m.list.Index() + 1
-				tag := translate.GetTag()
-				m.translateTag = tag
-				m.translatedTag.Focus()
+				if m.command == 1 {
+					tag := translate.GetTag()
+					m.translateTag = tag
+					m.translatedTag.Focus()
+					break
+				}
+				if m.command == 2 {
+					m.isSearchTag = true
+					m.searchTag.Focus()
+					break
+				}
 			}
 			if m.command == 1 {
 				value := m.translatedTag.Value()
@@ -54,6 +64,32 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 				m.translatedTag.Reset()
 			}
 			if m.command == 2 {
+				if m.isSearchTag {
+					tagName := m.searchTag.Value()
+					if len(tagName) == 0 {
+						break
+					}
+					tag, err := translate.Tag{
+						Name: tagName,
+					}.GetTag()
+					if err != nil {
+						break
+					}
+					m.translateTag = tag
+					m.isSearchTag = false
+					m.translatedTag.Focus()
+				} else {
+					value := m.translatedTag.Value()
+					if len(value) != 0 {
+						_ = translate.UpdateTag(m.translateTag.Name, value)
+					}
+					m.isSearchTag = true
+					m.searchTag.Reset()
+					m.translatedTag.Reset()
+					m.searchTag.Focus()
+				}
+			}
+			if m.command == 3 {
 				err := translate.ExportTagCompleteTranslateFile()
 				if err != nil {
 					println(err.Error())
@@ -61,7 +97,7 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 				}
 				return m, tea.Quit
 			}
-			if m.command == 3 {
+			if m.command == 4 {
 				err := translate.ImportDanbooruTag()
 				if err != nil {
 					println(err.Error())
@@ -83,21 +119,37 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	if m.command == 1 {
 		m.translatedTag, cmd = m.translatedTag.Update(msg)
 	}
+	if m.command == 2 {
+		if m.isSearchTag {
+			m.searchTag, cmd = m.searchTag.Update(msg)
+		} else {
+			m.translatedTag, cmd = m.translatedTag.Update(msg)
+		}
+	}
 	return m, cmd
 }
 
 func (m model) View() string {
 	var docStyle = lipgloss.NewStyle().Margin(1, 2)
-	if m.command == 0 {
-		return docStyle.Render(m.list.View())
-	}
 	var color = termenv.EnvColorProfile().Color
 	var keyword = termenv.Style{}.Foreground(color("204")).Background(color("235")).Bold().Underline().Styled
 	var bold = termenv.Style{}.Bold().Styled
 	var underline = termenv.Style{}.Bold().Underline().Styled
+	if m.command == 0 {
+		return docStyle.Render(m.list.View())
+	}
+	if m.command == 1 {
+		return fmt.Sprintf(
+			"\n\n %s > %s\n\nCount: %s\nAlias: %s\n",
+			keyword(m.translateTag.Name),
+			bold(m.translatedTag.View()[2:]),
+			underline(strconv.Itoa(m.translateTag.PostCount)),
+			bold(m.translateTag.Alias),
+		)
+	}
 	return fmt.Sprintf(
 		"\n\n %s > %s\n\nCount: %s\nAlias: %s\n",
-		keyword(m.translateTag.Name),
+		keyword(m.searchTag.View()[2:]),
 		bold(m.translatedTag.View()[2:]),
 		underline(strconv.Itoa(m.translateTag.PostCount)),
 		bold(m.translateTag.Alias),
@@ -109,6 +161,7 @@ func main() {
 
 	items := []list.Item{
 		item{title: "単語を翻訳する", desc: "Dannboruのタグを日本語翻訳します"},
+		item{title: "特定の単語を翻訳する", desc: "特定のDannboruのタグを日本語翻訳します"},
 		item{title: "単語をエクスポートする", desc: "今までした翻訳をエクスポートします"},
 		item{title: "単語をインポートする", desc: "翻訳する単語をインポートします"},
 	}
@@ -116,6 +169,8 @@ func main() {
 	m := model{
 		list:          list.New(items, list.NewDefaultDelegate(), 0, 0),
 		translatedTag: textinput.New(),
+		isSearchTag:   false,
+		searchTag:     textinput.New(),
 	}
 	m.list.Title = "Command"
 	m.translatedTag.Placeholder = "女の子"

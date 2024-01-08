@@ -35,7 +35,12 @@
 
 `Enter`を押すと入力が確定され次に進みます、出てくる単語はまだ翻訳されておらず、翻訳されていないものの中で上位5個がランダムで出てきます
 
-間違えて入力してしまった場合どうするかって?、`sqlite3 app.db`, `SELECT ...`, `UPDATE ...`, ...略
+間違えて入力してしまった場合は`特定の単語を翻訳する`から翻訳してください。
+単語を覚えていない場合は
+```sql
+SELECT name, translated_name, post_count FROM tag WHERE translated = true ORDER BY post_count LIMIT 3;
+```
+上記のSQLを実行すると直近で翻訳した3件が出てきます
 
 # License
 under the `MIT License`
