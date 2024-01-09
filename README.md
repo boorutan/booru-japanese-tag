@@ -5,6 +5,24 @@
 
 本来の目的は自作のDanbooruクライアント、Boorutan ( 名称未定 )で使うためのものですが、その他の用途にもお使いいただけます
 
+このリポジトリーは主に四つのsvgファイルと一つのgoファイルで構成されています。
+- **danbooru.csv**
+  `danbooru.csv`は[webui tag complete](https://github.com/DominikDoom/a1111-sd-webui-tagcomplete)から取ってきたdanbooruのタグが入っています
+  danbooru公式が出しているタグリストから取ってこなかった理由は、あちらは1Mタグあり、parseなどが面倒だったためです
+- **danbooru-jp.csv**
+  `danbooru-jp.csv`は`danbooru.csv`に含まれるタグを手作業で翻訳した物のみが含まれています
+- **danbooru-machine-jp.csv**
+  `danbooru-machine-jp.csv`は`danbooru.csv`に含まれるタグを手作業で翻訳した`danbooru-jp.csv`を機械翻訳で翻訳した`danbooru-only-machine-jp.csv`で補ったものです。
+  よく使われるタグや個人的に気になったタグは手作業で翻訳されていますが、それ以外のタグは機械翻訳です。
+- **danbooru-only-machine-jp.csv**
+  `danbooru-only-machine-jp.csv`は`danbooru.csv`に含まれるタグを機械翻訳( Google翻訳 )のみで翻訳した物です、正常に翻訳できてないものや誤訳などが大量に含まれます。
+  スプレッドシートに以下のような式を入力して翻訳しています
+```
+=GOOGLETRANSLATE(SUBSTITUTE({tag}, "_", " "),"en","ja")
+```
+- **main.go**
+  `main.go`は翻訳の時に使ってるツールです、タグの翻訳、修正、エクスポートなどができます
+
 # How to use `danbooru-jp.csv`
 翻訳したものは`app.db`や`danbooru-jp.csv`に入っています、適当に取り出してください
 
