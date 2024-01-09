@@ -98,6 +98,21 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 				return m, tea.Quit
 			}
 			if m.command == 4 {
+				err := translate.ExportTagWithMachineTranslate()
+				if err != nil {
+					println(err.Error())
+					return m, tea.Quit
+				}
+				return m, tea.Quit
+			}
+			if m.command == 5 {
+				err := translate.ImportMachineTranslatedDanbooruTag()
+				if err != nil {
+					return m, tea.Quit
+				}
+				return m, tea.Quit
+			}
+			if m.command == 6 {
 				err := translate.ImportDanbooruTag()
 				if err != nil {
 					println(err.Error())
@@ -170,6 +185,8 @@ func main() {
 		item{title: "単語を翻訳する", desc: "Dannboruのタグを日本語翻訳します"},
 		item{title: "特定の単語を翻訳する", desc: "特定のDannboruのタグを日本語翻訳します"},
 		item{title: "単語をエクスポートする", desc: "今までした翻訳をエクスポートします"},
+		item{title: "機械翻訳と一緒に単語をエクスポートする", desc: "今までした翻訳を機械学習と一緒にエクスポートします"},
+		item{title: "機械翻訳をインポートする", desc: "機械翻訳をインポートします、環境によっては1分以上かかります"},
 		item{title: "単語をインポートする", desc: "翻訳する単語をインポートします、環境によっては1分以上かかります"},
 	}
 

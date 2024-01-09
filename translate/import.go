@@ -8,12 +8,13 @@ import (
 )
 
 type Tag struct {
-	Name           string
-	PostCount      int
-	Alias          string
-	Id             int
-	TranslatedName string
-	Translated     bool
+	Name                  string
+	PostCount             int
+	Alias                 string
+	Id                    int
+	TranslatedName        string
+	Translated            bool
+	MachineTranslatedName string
 }
 
 func GetTag() Tag {
@@ -44,6 +45,28 @@ func (t Tag) GetTag() (Tag, error) {
 func UpdateTag(en, ja string) error {
 	_, err := db.DB.Exec("UPDATE tag SET translated = true, translated_name = ? WHERE name = ?", ja, en)
 	return err
+}
+
+func ImportMachineTranslatedDanbooruTag() error {
+	file, err := os.Open("danbooru-only-machine-jp.csv")
+	if err != nil {
+		return err
+	}
+	defer func(file *os.File) {
+		_ = file.Close()
+	}(file)
+	reader := csv.NewReader(file)
+	rows, err := reader.ReadAll()
+	if err != nil {
+		return err
+	}
+	for _, v := range rows {
+		_, err = db.DB.Exec("UPDATE tag SET machine_translated_name = ? WHERE name = ?", v[1], v[0])
+		if err != nil {
+			continue
+		}
+	}
+	return nil
 }
 
 func ImportDanbooruTag() error {
