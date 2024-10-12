@@ -30,6 +30,7 @@ dress,ドレス
 original,オリジナル
 ribbon,リボン
 bow,リボン
+touhou,東方Project
 navel,おへそ
 2girls,二人の女の子
 holding,物を持ってる
@@ -301,15 +302,21 @@ one-piece_swimsuit,一部位の水着
 loli,ロリ
 ascot,アスコットタイ
 black_shirt,黒シャツ
+no_humans,人無し
+sparkle,光エフェクト
+window,窓
 no_bra,ノーブラ
 saliva,唾液
+uncensored,無修正
 bed,ベッド
 blood,血
 completely_nude,全裸
+hoodie,パーカー
 4koma,四コマ漫画
 pussy_juice,愛液
 mask,マスク
 no_panties,ノーパン
+multiple_views,マルチアングル
 witch_hat,魔女の帽子
 anus,肛門
 fruit,フルーツ
@@ -318,25 +325,37 @@ cum_in_pussy,中出し
 bottomless,ボトムレス
 red_skirt,赤スカート
 6+girls,六人以上の女の子
+ocean,海
+animal,動物
+embarrassed,照れ顔
 on_bed,ベッドで
+drill_hair,縦ロール
 topless,トップレス
 skirt_lift,スカートのたくしあげ
+magical_girl,魔法少女
 bound,緊縛
 playboy_bunny,バニーガール
 erection,勃起
-school_swimsuit,スク水
+school_swimsuit,スクール水着
+cum_on_body,ぶっかけ
 3boys,三人の男の子
 straddling,騎乗位
+elf,エルフ
 fox_girl,狐娘
+between_breasts,谷間
 blue_archive,ブルーアーカイブ
 dog_ears,犬耳
 ejaculation,射精
+gift,プレゼント
 after_sex,事後
 condom,コンドーム
 rape,レイプ
+spread_pussy,マンコを開く
+cum_in_mouth,口内射精
 dog_tail,いぬしっぽ
 dog_girl,犬娘
 heart_censor,ハートで修正済み
+magic,魔法
 orgasm,オーガズム
 sound_effects,オノマトペ
 torso_grab,胴体掴み
@@ -346,7 +365,6 @@ spasm,痙攣
 commentary_request,解説リクエスト
 absurdres,不条理
 bad_id,悪いID
-touhou,touhou
 bad_pixiv_id,悪いpixiv id
 photoshop_(medium),Photoshop（中）
 commentary,解説
@@ -367,13 +385,10 @@ dutch_angle,オランダの角度
 clothing_cutout,衣類の切り抜き
 eyelashes,睫毛
 open_shirt,オープンシャツ
-no_humans,人間はいません
 bare_legs,素足
 bar_censor,バー検閲
 dress_shirt,ドレスシャツ
-sparkle,輝く
 mole_under_eye,目の下のほくろ
-window,窓
 kneeling,ひざまずく
 lowres,ローレス
 pokemon_(creature),ポケモン（クリーチャー）
@@ -387,12 +402,10 @@ strapless,ストラップレス
 bell,ベル
 double_bun,ダブルパン
 aqua_hair,アクアヘア
-uncensored,無修正
 black_headwear,黒い帽子
 black_ribbon,黒いリボン
 military_uniform,軍服
 md5_mismatch,MD5ミスマッチ
-hoodie,パーカー
 hatsune_miku,初音ミク
 sideboob,サイドブーブ
 scan,スキャン
@@ -407,7 +420,6 @@ neck_ribbon,ネックリボン
 leaning_forward,前方に傾いています
 thigh_strap,太ももストラップ
 muscular,筋肉
-multiple_views,複数のビュー
 capelet,capelet
 banned_artist,禁止されたアーティスト
 arknights,arknights
@@ -449,11 +461,9 @@ bird,鳥
 siblings,兄弟
 headphones,ヘッドフォン
 colored_skin,色付きの肌
-ocean,海
 arm_support,アームサポート
 heterochromia,ヘテロクロミア
 low_twintails,低い小売
-animal,動物
 halterneck,ホルターネック
 umbrella,傘
 frown,眉をひそめる
@@ -461,7 +471,6 @@ beret,ベレー
 leaf,葉
 thigh_boots,太もものブーツ
 pov,POV
-embarrassed,恥ずかしい
 one_side_up,片側
 white_headwear,白い帽子
 back,戻る
@@ -498,7 +507,6 @@ hair_tubes,ヘアチューブ
 blush_stickers,赤面ステッカー
 shirt_lift,シャツリフト
 expressionless,無表情
-drill_hair,髪の毛をドリルします
 chinese_clothes,中国の服
 brown_footwear,茶色の履物
 grabbing,つかむ
@@ -519,7 +527,6 @@ phone,電話
 symbol-only_commentary,シンボルのみの解説
 fire_emblem,火の紋章
 eyepatch,アイパッチ
-magical_girl,魔法の女の子
 stuffed_toy,ぬいぐるみ
 floral_print,花柄
 black_shorts,黒いショートパンツ
@@ -556,7 +563,6 @@ sunglasses,サングラス
 chinese_commentary,中国の解説
 testicles,test丸
 halo,ハロー
-cum_on_body,体に精液
 bdsm,BDSM
 dark-skinned_male,肌の肌の皮
 white_footwear,白い靴
@@ -703,7 +709,6 @@ casual,カジュアル
 ground_vehicle,地上車両
 loafers,ローファー
 gauntlets,ガントレット
-elf,妖精
 pink_panties,ピンクのパンティー
 no_pants,ズボンがない
 t-shirt,Tシャツ
@@ -721,7 +726,6 @@ kiss,キス
 black_socks,黒い靴下
 single_thighhigh,シングルチッグハイ
 messy_hair,ボサボサの髪
-between_breasts,胸の間
 breast_press,乳房プレス
 surprised,驚いた
 hat_bow,帽子の弓
@@ -918,7 +922,6 @@ lens_flare,レンズフレア
 hololive_english,ホロリーブ英語
 1other,1人
 armlet,アームレット
-gift,贈り物
 pink_nails,ピンクの爪
 spikes,スパイク
 hand_on_own_face,自分の顔に手
@@ -1084,7 +1087,6 @@ holding_phone,電話を持っています
 gym_uniform,ジムユニフォーム
 knee_up,ひざ
 cumdrip,累積
-spread_pussy,猫を広げます
 fur_collar,毛皮の襟
 school_bag,ランドセル
 resolution_mismatch,解像度の不一致
@@ -1106,7 +1108,6 @@ pink_shirt,ピンクのシャツ
 pocket,ポケット
 under-rim_eyewear,リムアンダーアイウェア
 toned,トーン
-cum_in_mouth,口の中で精液
 shiny_clothes,光沢のある服
 bulge,バルジ
 long_legs,長い脚
@@ -1706,7 +1707,6 @@ airplane,飛行機
 vision_(genshin_impact),ビジョン（Genshin Impact）
 uneven_legwear,不均一なレッグウェア
 cheerleader,チアリーダー
-magic,魔法
 car,車
 beachball,ビーチボール
 smug,独善的
